@@ -4,8 +4,8 @@ from multiprocessing import Pool
 
 # Generate all parameter combinations
 seeds = [40, 41, 42]
-equation_numbers = ["I1312", "I262", "I2916", "I62", "I918", "III952"]
-equation_strings = {"I1312":"I.13.12", "I262":"I.26.2", "I2926":"I.29.16", "I62":"I.6.2", "I918":"I.9.18", "III952":"III.9.52"}
+equation_numbers = ["I262", "I2916", "I62", "I918", "III952"]#["I1312", "I262", "I2916", "I62", "I918", "III952"]
+equation_strings = {"I262":"I.26.2", "I2926":"I.29.16", "I62":"I.6.2", "I918":"I.9.18", "III952":"III.9.52"}#{"I1312":"I.13.12", "I262":"I.26.2", "I2926":"I.29.16", "I62":"I.6.2", "I918":"I.9.18", "III952":"III.9.52"}
 loss_funcs = ["MSE", "MAE", "Huber", "Weighted"]
 activations = ["Tanh", "ReLU", "SiLU"]
 neuron_widths = ["5-5-5-5", "5-10-15-20", "20-20-20-20"]
