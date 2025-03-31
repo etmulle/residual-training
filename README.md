@@ -1,9 +1,14 @@
 # Residual Training
 
+## Package requirements
+
+Required packages are in requirements.txt. You can install them by navigating to the code directory and typing
+    pip install -r requirements.txt
+
 ## Example Usage for Training
     python main.py --SEED 40 --EQUATION_NUMBER I1312 --LOSS_FUNC    MSE --ACTIVATION_NAME Tanh --NEURON_WIDTHS 5-5-5-5 --NEURON_DEPTHS  5-5-5-5 --DATA_PATH ../../Feynman_without_units/I.13.12
     
-# Command-Line Arguments Summary
+## Command-Line Arguments Summary
 
 Below is a list of command-line arguments along with their descriptions:
 
