@@ -9,15 +9,18 @@ def load_data(filename):
     Y = torch.tensor(data[:, -1], dtype=torch.float64).unsqueeze(dim=1)
     return X, Y
 
-def normalize_data(x, y):
+def normalize_data(x, y, normalize_y):
     mean = x.mean(dim=0)
     std = x.std(dim=0)
-    mean_y = y.mean(dim=0)
-    std_y = y.std(dim=0)
-
     x_norm = (x - mean) / std
-    y_norm = (y - mean_y) / std_y
-    return x_norm, y_norm
+    if normalize_y:
+        mean_y = y.mean(dim=0)
+        std_y = y.std(dim=0)
+        y_norm = (y - mean_y) / std_y
+        return x_norm, y_norm
+    else:
+        print("x normalized, y left unnormalized")
+        return x_norm, y
 
 def weighted_mse_loss(predictions, targets):
     weights = torch.abs(targets)

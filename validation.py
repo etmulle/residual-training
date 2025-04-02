@@ -92,12 +92,12 @@ x,y = load_data("../../Feynman_without_units/I.13.12")
 # Compute mean and standard deviation from the training data
 mean = x.mean(dim=0)
 std = x.std(dim=0)
-mean_y = y.mean(dim=0)
-std_y = y.std(dim=0)
+#mean_y = y.mean(dim=0)
+#std_y = y.std(dim=0)
 
 # Normalize training and test data
 x_norm = (x - mean) / std
-y_norm = (y - mean_y) / std_y
+y_norm = y#(y - mean_y) / std_y
 
 in_dim = x.shape[1]
 width = 5
@@ -174,7 +174,7 @@ with torch.no_grad():
 
 val_x, val_y = generate_data(5, 2, 1000000, I1312, I1312_dimensionless, [(1,5),(1,5),(1,5),(1,5),(1,5)])
 val_x_norm = (val_x - mean) / std
-val_y_norm = (val_y - mean_y) / std_y
+#val_y_norm = (val_y - mean_y) / std_y
 val_pred = model(val_x_norm) + eps[0]*res1(val_x_norm) + eps[1]*res2(val_x_norm) + eps[2]*res3(val_x_norm)
 with torch.no_grad():
-    print(rmse_loss_fn_torch(val_pred.squeeze(1), val_y_norm).item())
+    print(rmse_loss_fn_torch(val_pred.squeeze(1), val_y).item())

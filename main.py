@@ -71,7 +71,7 @@ def main():
     RES_NETWORK_DEPTHS = NEURON_DEPTHS_LIST[1:]
     
     x, y = load_data(args.DATA_PATH)
-    x_norm, y_norm = normalize_data(x, y)
+    x_norm, y_norm = normalize_data(x, y, normalize_y=False)
     
     print("Starting training...")
     init_NN, models, epsilons, losses = residual_training(
