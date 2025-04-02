@@ -1,12 +1,20 @@
 # Residual Training
 
-## Package requirements
+## Python and Package requirements
 
-Required packages are in requirements.txt. You can install them by navigating to the code directory and typing
+This code was written using Python version 3.11.9. Required packages are in requirements.txt. You can install them by navigating to the code directory and typing
 
     pip install -r requirements.txt
 
 ## Example Usage for Training
+Navigate to the directory containing these scripts, and take note of the path to your data file. Data should be formatted as each row being a (x,y) sample. Values should be separated by spaces. For example, samples for the equation y = x_1 + x_2 should be formatted as
+
+    x_1 x_2 y
+
+with each row as a new sample.
+
+Example of how to run the code:
+
     python main.py --SEED 40 --EQUATION_NUMBER I1312 --LOSS_FUNC    MSE --ACTIVATION_NAME Tanh --NEURON_WIDTHS 5-5-5-5 --NEURON_DEPTHS  5-5-5-5 --DATA_PATH ../../Feynman_without_units/I.13.12
     
 ## Command-Line Arguments Summary
